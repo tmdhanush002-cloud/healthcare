@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Find Your Doctor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="patient.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+padding:30px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.back-btn{
+padding:8px 18px;
+border:none;
+border-radius:20px;
+background:#00c6ff;
+color:white;
+cursor:pointer;
+text-decoration:none;
+}
+
+.top-bar{
+display:flex;
+justify-content:space-between;
+gap:15px;
+background:rgba(255,255,255,0.08);
+padding:15px 20px;
+border-radius:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.categories{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.cat-btn{
+padding:10px 20px;
+border-radius:25px;
+border:none;
+cursor:pointer;
+background:rgba(255,255,255,0.1);
+color:white;
+}
+
+.cat-btn.active{
+background:#00f2fe;
+color:black;
+}
+
+.search-wrap{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.search-input{
+flex:1;
+min-width:220px;
+padding:10px 14px;
+border:none;
+border-radius:12px;
+outline:none;
+}
+
+.search-btn{
+padding:10px 18px;
+border:none;
+border-radius:12px;
+background:#00f2fe;
+cursor:pointer;
+font-weight:600;
+}
+
+.main{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.doctor-section{
+flex:3;
+min-width:300px;
+}
+
+.doctor-card{
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.doctor-info{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.doctor-info img{
+width:70px;
+height:70px;
+border-radius:50%;
+}
+
+.slots{
+margin-top:10px;
+}
+
+.slot-btn{
+padding:6px 12px;
+border-radius:20px;
+border:1px solid #00f2fe;
+background:transparent;
+color:#00f2fe;
+margin-right:8px;
+margin-bottom:8px;
+cursor:pointer;
+}
+
+.slot-btn.active{
+background:#00f2fe;
+color:black;
+}
+
+.book-btn{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:linear-gradient(90deg,#ff00cc,#3333ff);
+color:white;
+cursor:pointer;
+}
+
+.filter-box{
+flex:1;
+min-width:250px;
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:15px;
+}
+
+.hidden{
+display:none !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h2> Consult a Doctor 👨‍⚕️</h2>
+<a class="back-btn" href="dashboard.html">Back</a>
+</div>
+
+<div class="top-bar">
+<div>🏥Trusted hospitals & specialists , Your Health, Our Priority 💙</div>
+<div>📍 Madurai, India  </div>
+
+</div>
+
+<div class="search-wrap">
+<input type="text" id="doctorSearch" class="search-input" placeholder="Search doctor name...">
+<button class="search-btn" id="searchBtn">Search</button>
+</div>
+
+<div class="categories">
+<button class="cat-btn active" data-category="Cardiology">Cardiology</button>
+<button class="cat-btn" data-category="General">General</button>
+<button class="cat-btn" data-category="Pediatrics">Pediatrics</button>
+<button class="cat-btn" data-category="Gynecology">Gynecology</button>
+<button class="cat-btn" data-category="Neurology">Neurology</button>
+</div>
+
+<h3 id="doctorCount">Doctors Available (0)</h3>
+
+<div class="main">
+
+<div class="doctor-section" id="doctorList">
+
+<div class="doctor-card" data-category="Cardiology">
+<div class="doctor-info">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<div>
+<h3>Dr. R Kumar</h3>
+<p>Cardiologist • 8+ Years</p>
+<p>Apollo Hospital, Madurai</p>
+<p>Fee: ₹500</p>
+<div class="slots">
+<button class="slot-btn">10:00 AM</button>
+<button class="slot-btn">11:30 AM</button>
+<button class="slot-btn">01:00 PM</button>
+</div>
+</div>
+</div>
+<button class="book-btn" onclick="window.location.href='./book-appointment.html'">Book Appointment</button>
+</div>
+
+<div class="doctor-card" data-category="General">
+<div class="doctor-info">
+<img src="https://randomuser.me/api/portraits/men/67.jpg">
+<div>
+<h3>Dr. Vikram</h3>
+<p>General Physician • 9+ Years</p>
+<p>Wellness Clinic, Madurai</p>
+<p>Fee: ₹300</p>
+<div class="slots">
+<button class="slot-btn">10:15 AM</button>
+<button class="slot-btn">01:15 PM</button>
+<button class="slot-btn">05:00 PM</button>
+</div>
+</div>
+</div>
+<button class="book-btn" onclick="window.location.href='./book-appointment.html'">Book Appointment</button>
+</div>
+
+<div class="doctor-card" data-category="Pediatrics">
+<div class="doctor-info">
+<img src="https://randomuser.me/api/portraits/women/21.jpg">
+<div>
+<h3>Dr. Nisha</h3>
+<p>Pediatrician • 7+ Years</p>
+<p>Kids Care Hospital, Madurai</p>
+<p>Fee: ₹400</p>
+<div class="slots">
+<button class="slot-btn">10:00 AM</button>
+<button class="slot-btn">02:00 PM</button>
+<button class="slot-btn">04:00 PM</button>
+</div>
+</div>
+</div>
+<button class="book-btn" onclick="window.location.href='./book-appointment.html'">Book Appointment</button>
+</div>
+
+<div class="doctor-card" data-category="Gynecology">
+<div class="doctor-info">
+<img src="https://randomuser.me/api/portraits/women/68.jpg">
+<div>
+<h3>Dr. Anita</h3>
+<p>Gynecologist • 11+ Years</p>
+<p>Women Care Center, Madurai</p>
+<p>Fee: ₹750</p>
+<div class="slots">
+<button class="slot-btn">11:00 AM</button>
+<button class="slot-btn">01:30 PM</button>
+<button class="slot-btn">04:30 PM</button>
+</div>
+</div>
+</div>
+<button class="book-btn" onclick="window.location.href='./book-appointment.html'">Book Appointment</button>
+</div>
+
+<div class="doctor-card" data-category="Neurology">
+<div class="doctor-info">
+<img src="https://randomuser.me/api/portraits/men/71.jpg">
+<div>
+<h3>Dr. Prakash</h3>
+<p>Neurologist • 15+ Years</p>
+<p>Neuro Life Hospital, Madurai</p>
+<p>Fee: ₹1000</p>
+<div class="slots">
+<button class="slot-btn">09:45 AM</button>
+<button class="slot-btn">12:45 PM</button>
+<button class="slot-btn">03:45 PM</button>
+</div>
+</div>
+</div>
+<button class="book-btn" onclick="window.location.href='./book-appointment.html'">Book Appointment</button>
+</div>
+
+</div>
+
+<div class="filter-box">
+<h3>Filters</h3>
+<p><input type="checkbox" class="filter-check" value="Cardiology"> Cardiology</p>
+<p><input type="checkbox" class="filter-check" value="General"> General</p>
+<p><input type="checkbox" class="filter-check" value="Pediatrics"> Pediatrics</p>
+<p><input type="checkbox" class="filter-check" value="Gynecology"> Gynecology</p>
+<p><input type="checkbox" class="filter-check" value="Neurology"> Neurology</p>
+</div>
+
+</div>
+
+<script>
+const catButtons = document.querySelectorAll(".cat-btn");
+const doctorCards = document.querySelectorAll(".doctor-card");
+const doctorCount = document.getElementById("doctorCount");
+const searchInput = document.getElementById("doctorSearch");
+const searchBtn = document.getElementById("searchBtn");
+
+function updateCount(){
+  let visible = document.querySelectorAll(".doctor-card:not(.hidden)").length;
+  doctorCount.innerText = "Doctors Available ("+visible+")";
+}
+
+catButtons.forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    catButtons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    let category = btn.getAttribute("data-category");
+
+    doctorCards.forEach(card=>{
+      card.classList.toggle("hidden", card.getAttribute("data-category") !== category);
+    });
+
+    updateCount();
+  });
+});
+
+document.querySelectorAll(".filter-check").forEach(check=>{
+  check.addEventListener("change", ()=>{
+    let selected = [...document.querySelectorAll(".filter-check:checked")].map(c=>c.value);
+
+    doctorCards.forEach(card=>{
+      if(selected.length === 0){
+        card.classList.remove("hidden");
+      } else {
+        card.classList.toggle("hidden", !selected.includes(card.getAttribute("data-category")));
+      }
+    });
+
+    updateCount();
+  });
+});
+
+searchBtn.addEventListener("click", ()=>{
+  const keyword = searchInput.value.toLowerCase().trim();
+
+  doctorCards.forEach(card=>{
+    const doctorName = card.querySelector("h3").innerText.toLowerCase();
+    if(doctorName.includes(keyword) || keyword === ""){
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+    }
+  });
+
+  updateCount();
+});
+
+function goToProfile(doctor,speciality,experience,hospital,location,fee){
+  const url = `doctor-profile.html?doctor=${encodeURIComponent(doctor)}&speciality=${encodeURIComponent(speciality)}&experience=${encodeURIComponent(experience)}&hospital=${encodeURIComponent(hospital)}&location=${encodeURIComponent(location)}&fee=${encodeURIComponent(fee)}`;
+  window.location.href = url;
+}
+
+updateCount();
+</script>
+
+</body>
+</html>

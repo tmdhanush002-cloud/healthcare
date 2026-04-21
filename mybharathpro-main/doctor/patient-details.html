@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Patient Details</title>
+<link rel="stylesheet" href="doctor.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<h2>Patient Details</h2>
+<button onclick="goBack()">Back</button>
+</header>
+
+<div class="container">
+
+<div class="doctor-card">
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Age</th>
+      <th>Condition</th>
+      <th>BP</th>
+      <th>Glucose / Temp</th>
+      <th>Status</th>
+
+      <th>Eye Image</th>
+      <th>Squint Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rahul Kumar</td>
+      <td>45</td>
+      <td>Diabetes</td>
+      <td>120/80</td>
+      <td>190</td>
+      <td class="status normal">Normal</td>
+      <td>
+        <img src="doctor_pic.png"width="50">
+      </td>
+      <td>
+        <select>
+          <option>Normal</option>
+          <option>Possible Squint</option>
+          <option>Emergency</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Riya Sharma</td>
+      <td>32</td>
+      <td>Fever</td>
+      <td>110/70</td>
+      <td>99°F</td>
+      <td class="status waiting">Waiting</td>
+    </tr>
+    <tr>
+      <td>Anil Gupta</td>
+      <td>55</td>
+      <td>Heart Check</td>
+      <td>150/100</td>
+      <td>102 Pulse</td>
+      <td class="status emergency">Emergency</td>
+    </tr>
+    <tr>
+      <td>Anita Sharma</td>
+      <td>52</td>
+      <td>Hypertension</td>
+      <td>140/90</td>
+      <td>210</td>
+      <td class="status emergency">Emergency</td>
+    </tr>
+    <tr>
+      <td>Vikram Singh</td>
+      <td>38</td>
+      <td>Asthma</td>
+      <td>118/76</td>
+      <td>160</td>
+      <td class="status normal">Normal</td>
+    </tr>
+    <tr>
+      <td>Meena Reddy</td>
+      <td>60</td>
+      <td>Heart Disease</td>
+      <td>150/95</td>
+      <td>250</td>
+      <td class="status followup">Follow-up</td>
+    </tr>
+    <tr>
+      <td>Arjun Patel</td>
+      <td>29</td>
+      <td>Allergy</td>
+      <td>115/75</td>
+      <td>130</td>
+      <td class="status normal">Normal</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+<button onclick="writePrescription()">
+Write Prescription
+</button>
+
+</div>
+
+<script src="doctor.js"></script>
+
+</body>
+</html>
+<button onclick="goBack()">Back</button>
+
+<script>
+function goBack(){
+window.location.href = "doctor.html";
+}
+</script>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedConnect Clinic</title>
+
+    <link rel="stylesheet" href="clinic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="logo">🩺 MedConnect Clinic</div>
+
+        <input class="search" placeholder="Search Clinic">
+
+        <div class="top-icons">
+            <i class="fa-regular fa-bell"></i>
+            <img src="https://i.pravatar.cc/40">
+        </div>
+
+    </header>
+
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+            <i class="fa-regular fa-house"></i>
+            <i class="fa-solid fa-grip"></i>
+            <i class="fa-regular fa-clipboard"></i>
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-gear"></i>
+        </div>
+
+
+        <!-- MAIN -->
+
+        <div class="main">
+
+            <h2>Pharmacy Operations Dashboard</h2>
+
+            <div class="dashboard-grid">
+
+                <!-- INVENTORY -->
+
+                <div class="card">
+
+                    <h3>Live Inventory Status</h3>
+                    <p>Top medicines</p>
+
+                    <canvas id="inventoryChart"></canvas>
+
+                    <div class="inventory-alert red">
+                        Paracetamol 500mg - 20 left <span>10 left</span>
+                    </div>
+
+                    <div class="inventory-alert yellow">
+                        Paracetamol 500mg - 17 left <span>30 left</span>
+                    </div>
+
+                    <div class="inventory-alert yellow">
+                        Paracetamol 500mg - 20 left <span>10 left</span>
+                    </div>
+
+                </div>
+
+
+                <!-- PRESCRIPTIONS -->
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h3>Incoming Prescriptions</h3>
+                            <p>Recent e-prescriptions received from doctors</p>
+                        </div>
+
+                        <button class="dropdown">Prioritized</button>
+                    </div>
+
+                    <div class="prescription-list" id="prescriptions"></div>
+
+                </div>
+
+
+                <!-- PACKING QUEUE -->
+
+                <div class="card">
+                    <div class="card1">
+                        <h3>Medicine Packing Queue</h3>
+                        <p>Orders in progress</p>
+
+                        <div class="queue blue"><i class="fa-solid fa-check"></i>Verifying</div>
+
+                        <div class="arrow"><i class="fa-solid fa-arrow-down-long"></i></div>
+
+                        <div class="queue green"><i class="fa-solid fa-check"></i>Picking</div>
+
+                        <div class="arrow"><i class="fa-solid fa-arrow-down-long"></i></div>
+
+                        <div class="yellow-box">
+                            <i class="fa-solid fa-exclamation"></i>Ready for Delivery
+                        </div>
+                    </div>
+
+                    <div class="card2">
+                        <h4>Completed orders</h4>
+                        <div class="handover">
+                            <p>Estimate pickup at 37 am</p>
+
+                            <button class="primary">
+                                Handover to Delivery Partner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="bottom-grid">
+
+                <!-- VELOCITY -->
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <h3>Daily Prescription Velocity</h3>
+                        <button class="dropdown">Volume</button>
+                    </div>
+
+                    <canvas id="velocityChart"></canvas>
+                </div>
+
+
+                <!-- METRICS -->
+
+                <div class="card metrics">
+
+                    <h3>Key Clinic Metrics</h3>
+
+                    <div class="metric">
+                        <span>Active Doctors</span>
+                        <strong>44</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Total Patients Today</span>
+                        <strong>652</strong>
+                    </div>
+
+                    <div class="metric">
+                        <span>Average Dispatch Time</span>
+                        <strong>2h 7m</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="clinic.js"></script>
+</body>
+
+</html>

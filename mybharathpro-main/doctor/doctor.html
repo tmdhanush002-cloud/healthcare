@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Doctor Dashboard</title>
+<link rel="stylesheet" href="doctor.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">Healthcare</div>
+
+<div class="nav-right">
+<div class="profile-menu">
+
+<img src="doctor_pic.png" class="avatar" onclick="toggleMenu()">
+
+<div id="dropdownMenu" class="dropdown">
+
+<a href="doctor-profile.html">Profile</a>
+
+</div>
+
+</div>
+</div>
+
+</header>
+
+
+<!-- Menu -->
+
+<div class="menu">
+
+<a class="active" href="dashboard.html">Today's Appointments</a>
+<a href="appointments.html">Appointments</a>
+<a href="prescription.html">E-Prescription</a>
+<a href="followup.html">Patient Follow-Up</a>
+<a href="reports.html">Reports</a>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- Doctor Profile -->
+
+<div class="doctor-card">
+
+<img src="doctor_pic.png" class="doctor-image">
+
+    <div class="doctor-info">
+
+        <h2>Welcome, Dr Amar Choukekar!</h2>
+        <p>MBBS, MD Internal Medicine</p>
+        <p>📞 123-456-7890</p>
+        <p>📍 Clinic: Main Hospital Clinic</p>
+        <p>⭐ 10 Years Experience</p>
+
+    </div>
+
+</div>
+
+
+<div class="dashboard">
+
+
+<!-- LEFT SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="card green">
+<h3>Total Appointments</h3>
+<h1>9 / 12</h1>
+</div>
+
+<div class="card orange">
+<h3>Emergency Cases</h3>
+<h1>2</h1>
+</div>
+
+<div class="card red">
+<h3>Cancel / Reschedule</h3>
+<h1>1</h1>
+</div>
+
+<div class="card blue">
+<h3>Emergency Reports</h3>
+</div>
+
+
+<!-- Small Appointment Preview -->
+
+<div class="card preview">
+
+<h3>Today's Appointments</h3>
+<p><b>Rahul Kumar</b></p>
+<p>4:00 PM</p>
+
+<button onclick="viewPatient()">View</button>
+
+</div>
+
+</div>
+
+
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<h2>Today's Appointments</h2>
+
+<table>
+
+<tr>
+<th>Token</th>
+<th>Patient Name</th>
+<th>Time</th>
+<th>Visit</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td class="token">1</td>
+<td>Rahul Kumar</td>
+<td>4:00 PM</td>
+<td class="status waiting">Waiting</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+<tr>
+<td class="token">2</td>
+<td>Riya Sharma</td>
+<td>4:10 PM</td>
+<td class="status waiting">Waiting</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+<tr>
+<td class="token">3</td>
+<td>Anil Gupta</td>
+<td>4:20 PM</td>
+<td class="status emergency">Emergency</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+<tr>
+<td class="token">4</td>
+<td>Sunita Patel</td>
+<td>4:30 PM</td>
+<td class="status waiting">Waiting</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+<tr>
+<td class="token">5</td>
+<td>Arjun Verma</td>
+<td>4:40 PM</td>
+<td class="status waiting">Waiting</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+<tr>
+<td class="token">6</td>
+<td>Pooja Mehta</td>
+<td>4:50 PM</td>
+<td class="status rescheduled">Rescheduled</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+<tr>
+<td class="token">7</td>
+<td>Ramesh Kumar</td>
+<td>5:00 PM</td>
+<td class="status waiting">Waiting</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+<tr>
+<td class="token">8</td>
+<td>Kavya Reddy</td>
+<td>5:10 PM</td>
+<td class="status emergency">Emergency</td>
+<td><button onclick="viewPatient()">View</button></td>
+</tr>
+
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+<script src="doctor.js"></script>
+
+</body>
+</html>

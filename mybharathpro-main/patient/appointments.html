@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Appointments</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="patient.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="page-header">
+    <h2 class="page-title">My Appointments</h2>
+    <a href="dashboard.html" class="glass-btn">Back</a>
+</div>
+
+<div class="appointments-container" id="appointmentList"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const container = document.getElementById("appointmentList");
+  let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+  if(appointments.length === 0){
+      appointments = [
+        {doctor:"Dr. R Kumar", date:"2026-04-02", time:"10:00 AM", notes:"Chest pain consultation", hospital:"Apollo Hospital", status:"Confirmed"},
+        {doctor:"Dr. S Meena", date:"2026-03-15", time:"02:30 PM", notes:"Follow-up for blood pressure", hospital:"City Hospital", status:"Confirmed"},
+        {doctor:"Dr. Anita", date:"2026-04-08", time:"04:30 PM", notes:"Gynecology review", hospital:"Women Care Center", status:"Confirmed"},
+        {doctor:"Dr. Nisha", date:"2026-04-10", time:"02:00 PM", notes:"Pediatric vaccination review", hospital:"Kids Care Hospital", status:"Confirmed"},
+        {doctor:"Dr. Prakash", date:"2026-04-13", time:"09:45 AM", notes:"Migraine follow-up", hospital:"Neuro Life Hospital", status:"Pending"},
+        {doctor:"Dr. Arvind Raj", date:"2026-04-15", time:"03:00 PM", notes:"Cardiac routine checkup", hospital:"Heart Care Clinic", status:"Confirmed"},
+        {doctor:"Dr. Vikram", date:"2026-04-18", time:"05:00 PM", notes:"Seasonal cold consultation", hospital:"Wellness Clinic", status:"Completed"}
+      ];
+  
+  }
+
+  container.innerHTML = "";
+
+  appointments.forEach(app => {
+      const div = document.createElement("div");
+      div.className = "appointment-card";
+      div.innerHTML = `
+          <h3><strong>Doctor:</strong> ${app.doctor}</h3>
+          <p><strong>Date:</strong> ${app.date}</p>
+          <p><strong>Time:</strong> ${app.time}</p>
+          <p><strong>Hospital:</strong> ${app.hospital || "Apollo Hospital"}</p>
+          <p><strong>Status:</strong> ${app.status || "Confirmed"}</p>
+          <p><strong>Notes:</strong> ${app.notes || "No notes added"}</p>
+      `;
+      container.appendChild(div);
+  });
+
+});
+</script>
+
+</body>
+</html>

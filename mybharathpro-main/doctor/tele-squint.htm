@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tele-Squint Evaluation</title>
+
+<style>
+body{
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+.card{
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+img{
+    border-radius: 10px;
+    margin: 10px;
+}
+
+select{
+    padding: 8px;
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #6366f1;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Tele-Squint Evaluation</h1>
+
+<div class="container">
+
+<div class="card">
+
+<h3>Patient: Rahul Kumar</h3>
+
+<img src="doctor_pic.png" width="120">
+
+<br>
+
+<label>Select Result:</label><br>
+
+<select id="result">
+<option>Normal</option>
+<option>Possible Squint</option>
+<option>Emergency</option>
+</select>
+
+<br>
+
+<button onclick="submitResult()">Submit</button>
+
+<p id="output"></p>
+
+<br>
+
+<button onclick="goBack()">Back</button>
+
+</div>
+
+</div>
+
+<script>
+
+function submitResult(){
+let result = document.getElementById("result").value;
+document.getElementById("output").innerText = "Result: " + result;
+}
+
+function goBack(){
+window.location.href = "doctor.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Appointment</title>
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="patient.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+.booking {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+.booking-card {
+width: 100%;
+max-width: 450px;
+}
+
+.booking-card input,
+.booking-card select,
+.booking-card textarea {
+width: 100%;
+padding: 10px;
+border-radius: 8px;
+border: none;
+outline: none;
+}
+
+.booking-card textarea {
+resize: none;
+min-height: 80px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<header class="patient-nav">
+<h2>Book Appointment</h2>
+<a href="./search-doctor.html" class="glass-btn">Back</a>
+</header>
+
+<section class="booking">
+
+<div class="booking-card">
+
+<h3>Appointment Booking</h3>
+
+<form id="bookingForm">
+
+<label>Select Date</label>
+<input type="date" id="appointmentDate" required>
+
+<br><br>
+
+<label>Select Time</label>
+<select id="appointmentTime" required>
+<option value="">-- Select Time --</option>
+<option>10:00 AM</option>
+<option>11:30 AM</option>
+<option>01:00 PM</option>
+<option>04:30 PM</option>
+</select>
+
+<br><br>
+
+<label>Patient Notes</label>
+<textarea id="appointmentNotes" placeholder="Enter symptoms"></textarea>
+
+<br><br>
+
+<button type="submit" class="glass-btn">
+Confirm Booking
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<script>
+
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+event.preventDefault();
+
+const date = document.getElementById("appointmentDate").value;
+const time = document.getElementById("appointmentTime").value;
+const notes = document.getElementById("appointmentNotes").value;
+
+// Get doctor name from URL (if passed)
+const urlParams = new URLSearchParams(window.location.search);
+const doctor = urlParams.get("doctor") || "Doctor";
+
+if (!date || !time) {
+alert("Please select date and time");
+return;
+}
+
+let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+appointments.push({
+doctor: doctor,
+date: date,
+time: time,
+notes: notes
+});
+
+localStorage.setItem("appointments", JSON.stringify(appointments));
+
+alert("Appointment Confirmed Successfully!");
+
+// Redirect to My Appointments page
+window.location.href = "appointments.html";
+
+});
+
+</script>
+
+</body>
+</html>

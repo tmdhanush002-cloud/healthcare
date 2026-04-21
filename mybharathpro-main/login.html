@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Healthcare Login</h2>
+
+  <input type="text" id="userInput" placeholder="Email or Mobile Number" required>
+
+  <input type="password" id="password" placeholder="Enter Password">
+
+  <h3 class="role-title">Select Role</h3>
+
+  <div class="roles">
+
+    <label class="role-card">
+      <input type="radio" name="role" value="patient">
+      <span>Patient</span>
+    </label>
+
+    <label class="role-card">
+      <input type="radio" name="role" value="doctor">
+      <span>Doctor</span>
+    </label>
+
+    <label class="role-card">
+      <input type="radio" name="role" value="clinic">
+      <span>Clinic</span>
+    </label>
+
+    <label class="role-card">
+      <input type="radio" name="role" value="chatbox">
+      <span>Chat Box</span>
+    </label>
+
+  </div>
+
+  <button class="login-btn" onclick="login()">Login</button>
+</div>
+
+<script>
+function login() {
+
+  let mobile = document.getElementById("userInput").value.trim();
+  let password = document.getElementById("password").value.trim();
+
+  // ✅ correct role selection
+  let role = document.querySelector('input[name="role"]:checked')?.value;
+
+  if(mobile === "" || password === "") {
+    alert("Enter mobile & password");
+    return;
+  }
+
+  if(!role) {
+    alert("Select role");
+    return;
+  }
+
+  // 🔥 ROLE BASED LOGIN
+  if(role === "patient") {
+    window.location.href = "patient/dashboard.html";
+  }
+  else if(role === "doctor") {
+    window.location.href = "doctor/doctor.html";
+  }
+  else if(role === "clinic") {
+    window.location.href = "doctor/clinic.html";
+  }
+  else if(role === "chatbox") {
+    window.location.href = "chatbox.html";
+  }
+}
+</script>
+
+</body>
+</html>

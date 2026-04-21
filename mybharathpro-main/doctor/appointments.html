@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Doctor Appointments</title>
+
+<link rel="stylesheet" href="doctor.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+</header>
+
+<div class="container">
+<a href="doctor.html" class="back-btn"> Back </a>
+
+<h2>Appointments</h2>
+
+
+<!-- Search -->
+
+<div class="search-bar">
+
+<input type="text" id="searchInput" placeholder="Search patient...">
+
+<select id="statusFilter">
+<option value="all">All</option>
+<option value="waiting">Waiting</option>
+<option value="normal">Normal</option>
+<option value="follow-up">Follow-up</option>
+<option value="emergency">Emergency</option>
+</select>
+
+<button onclick="searchPatients()">Search</button>
+
+</div>
+
+
+<!-- Table -->
+
+<div class="main">
+
+<table>
+
+<tr>
+
+<th>Token</th>
+<th>Patient</th>
+<th>Date</th>
+<th>Time</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+
+<tr>
+
+<td>1</td>
+<td>Rahul Kumar</td>
+<td>12 Mar</td>
+<td>4:00 PM</td>
+
+<td class="status waiting">Waiting</td>
+
+<td>
+
+<button onclick="viewPatient()">View</button>
+
+<button onclick="writePrescription()">Prescription</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>2</td>
+<td>Riya Sharma</td>
+<td>12 Mar</td>
+<td>4:15 PM</td>
+
+<td class="status waiting">Waiting</td>
+
+<td>
+
+<button onclick="viewPatient()">View</button>
+
+<button onclick="writePrescription()">Prescription</button>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>3</td>
+<td>Anil Gupta</td>
+<td>12 Mar</td>
+<td>4:30 PM</td>
+
+<td class="status emergency">Emergency</td>
+
+<td>
+
+<button onclick="viewPatient()">View</button>
+
+<button onclick="writePrescription()">Prescription</button>
+
+</td>
+
+</tr>
+
+<tr>
+  <td>1</td>
+  <td>Ravi Kumar</td>
+  <td>12 Mar</td>
+  <td>10:00 AM</td>
+  <td class="status normal">Normal</td>
+  <td>
+    <button onclick="viewPatient()">View</button>
+    <button onclick="writePrescription()">Prescription</button>
+  </td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td>Sneha Reddy</td>
+  <td>12 Mar</td>
+  <td>2:15 PM</td>
+  <td class="status followup">Follow-up</td>
+  <td>
+    <button onclick="viewPatient()">View</button>
+    <button onclick="writePrescription()">Prescription</button>
+  </td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td>Anil Gupta</td>
+  <td>12 Mar</td>
+  <td>4:30 PM</td>
+  <td class="status emergency">Emergency</td>
+  <td>
+    <button onclick="viewPatient()">View</button>
+    <button onclick="writePrescription()">Prescription</button>
+  </td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td>Meera Joshi</td>
+  <td>13 Mar</td>
+  <td>11:45 AM</td>
+  <td class="status emergency">Emergency</td>
+  <td>
+    <button onclick="viewPatient()">View</button>
+    <button onclick="writePrescription()">Prescription</button>
+  </td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="doctor.js"></script>
+
+</body>
+</html>
